@@ -13,7 +13,13 @@ function cumSum2(arr) {
   });
   return sum;
 }
+
+function cumSum3(arr) {
+  return arr.reduce((acc,curr) => acc + curr);
+}
+
 const arr = [1, 3, 4, 5, 5];
 
 console.log(cumSum(arr));
 console.log(cumSum2(arr));
+console.log(cumSum3(arr));
