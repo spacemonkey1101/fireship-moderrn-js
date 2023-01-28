@@ -1,4 +1,4 @@
-function binarySearch(arr, key) {
+export function binarySearch(arr, key) {
   let s = 0;
   let e = arr.length - 1;
   while (s <= e) {

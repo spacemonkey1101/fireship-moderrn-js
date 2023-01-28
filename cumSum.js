@@ -1,4 +1,4 @@
-function cumSum(arr) {
+export function cumSum(arr) {
   let sum = 0;
   for (const v of arr) {
     sum = sum + v;
@@ -15,13 +15,13 @@ function cumSum2(arr) {
 }
 
 function cumSum3(arr) {
-  return arr.reduce((acc,curr) => acc + curr);
+  return arr.reduce((acc, curr) => acc + curr);
 }
 
-function cumSum4(arr){
-  let total = 0 ; 
+export function cumSum4(arr) {
+  let total = 0;
 
-  for(let i = 0 ; i < arr.length ; i++ ){
+  for (let i = 0; i < arr.length; i++) {
     total += arr[i];
   }
 
