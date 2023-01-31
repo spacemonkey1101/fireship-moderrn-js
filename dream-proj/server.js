@@ -21,6 +21,9 @@ app.use(express.json());
 
 //endpoint
 app.post("/dream", async (req, res) => {
+
+  //try-catch block
+  try{
   const prompt = req.body.prompt;
   const openAIResponse = await openai.createImage({
     prompt,
@@ -30,6 +33,12 @@ app.post("/dream", async (req, res) => {
 
   const image = openAIResponse.data.data[0].url;
   res.send({ image });
+  }catch(error){
+    console.log(error);
+    res.status(500).send(error?.response.data.error.message || "Something went wrong");
+  }
 });
+
+
 
 app.listen(8080, () => console.log("Make art on http://localhost:8080/dream"));
